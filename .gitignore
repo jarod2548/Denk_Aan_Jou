@@ -1,0 +1,57 @@
+# .gitignore for Xcode / Swift / macOS projects
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+# User settings and workspace data (should not be committed)
+**/xcuserdata/
+**/*.xcuserdatad
+*.xcuserstate
+*.xcworkspace
+*.xcscmblueprint
+
+# Xcode project user files
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+
+# Build/Derived data
+build/
+DerivedData/
+*.o
+*.linkfilelist
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Misc
+*.swp
+*~
+
+# Ignore Xcode project workspaces and user data inside .xcodeproj bundles
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace
