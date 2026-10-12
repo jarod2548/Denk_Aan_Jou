@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240">
+  <style>
+    .table { fill: #ffffff; stroke: #2b2b2b; stroke-width: 2px; }
+    .header { fill: #2b8cff; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; fill-opacity: 1; }
+    .column { font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+    .pk { font-weight: bold; }
+    .note { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #444; }
+    .box-shadow { filter: url(#shadow); }
+  </style>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Table box -->
+  <g transform="translate(40,20)" class="box-shadow">
+    <rect class="table" x="0" y="0" rx="8" ry="8" width="560" height="180" />
+
+    <!-- Header -->
+    <rect x="0" y="0" width="560" height="42" fill="#2b8cff" rx="8" ry="8"/>
+    <text x="20" y="28" class="header" fill="#ffffff">lamp</text>
+
+    <!-- Columns -->
+    <g transform="translate(12,60)" class="column" fill="#111">
+      <text x="0" y="0" class="pk">id UUID PK</text>
+      <text x="0" y="28">name TEXT NOT NULL DEFAULT ''</text>
+      <text x="0" y="56">lampID TEXT NOT NULL</text>
+    </g>
+
+    <!-- Notes -->
+    <g transform="translate(12,120)">
+      <text x="0" y="18" class="note">Notes:</text>
+      <text x="0" y="36" class="note">- id maps to Swift UUID primary key (gen_random_uuid() example for Postgres)</text>
+      <text x="0" y="54" class="note">- name and lampID are non-nullable per Swift model</text>
+      <text x="0" y="72" class="note">- LampBericht is an @Observable (not persisted)</text>
+    </g>
+  </g>
+
+  <!-- Legend / DB examples -->
+  <g transform="translate(40,210)">
+    <text x="0" y="12" class="note">Generated from: Models/Lamp.swift (Dev branch)</text>
+  </g>
+</svg>
