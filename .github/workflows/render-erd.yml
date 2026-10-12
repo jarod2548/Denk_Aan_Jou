@@ -1,0 +1,47 @@
+name: Render ERD
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ Dev ]
+    paths:
+      - 'docs/erd.mmd'
+      - '.github/workflows/render-erd.yml'
+
+jobs:
+  render-erd:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: Dev
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Render ERD PNG and SVG
+        run: |
+          mkdir -p docs
+          mmdc -i docs/erd.mmd -o docs/erd.png -b transparent
+          mmdc -i docs/erd.mmd -o docs/erd.svg -b transparent
+
+      - name: Commit rendered ERD assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/erd.png docs/erd.svg
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Render ERD assets"
+            git push origin HEAD:Dev
+          fi
