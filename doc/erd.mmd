@@ -1,0 +1,14 @@
+erDiagram
+    LAMP {
+        UUID id PK
+        string name
+        string lampID
+    }
+
+    LAMP_BERICHT {
+        string lampId
+        LampColor kleur
+        LampRitme ritme
+    }
+
+    LAMP ||--o{ LAMP_BERICHT : "lampId matches lampID"
