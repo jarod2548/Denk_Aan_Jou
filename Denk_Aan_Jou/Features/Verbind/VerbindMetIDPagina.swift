@@ -4,9 +4,15 @@
 import SwiftUI
 
 struct VerbindMetIDPagina : View{
+    private let verbindService: VerbindService
+    
     @State private var lampID = ""
     @State private var lampNaam = ""
     @State private var foutmelding: String?
+    
+    init(verbindService: VerbindService) {
+        self.verbindService = verbindService
+    }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -65,11 +71,6 @@ struct VerbindMetIDPagina : View{
 
     }
 
-    #Preview {
-    NavigationStack {
-    VerbindMetIDPagina()
-    }
-}
 
 //
 //  Created by Jarod Konijnenberg on 12/10/2026.
