@@ -3,7 +3,7 @@
 //  MyApp
 import SwiftUI
 
-struct Berichtpagina : View{
+struct BerichtMakenPagina : View{
     let lamp : Lamp
     var body : some View{
         VStack(spacing: 16) {

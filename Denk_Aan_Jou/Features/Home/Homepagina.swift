@@ -7,6 +7,7 @@ import SwiftData
 struct Homepagina : View{
     @Query private var lampen : [Lamp]
     @Environment(\.modelContext) var modelContext
+    
     var body : some View{
         
         VStack(alignment: .leading, spacing: 12) {
@@ -27,7 +28,7 @@ struct Homepagina : View{
             else{
                 ForEach(lampen) { lamp in
                     NavigationLink {
-                        Berichtpagina(lamp:lamp)
+                        BerichtMakenPagina(lamp:lamp)
                     } label: {
                         Text(lamp.name)
                             .frame(maxWidth: .infinity, alignment: .leading)

@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var path: [Navigation] = [.Home]
-
+    
+        
     var body: some View {
         NavigationStack(path: $path) {
             Text("Ladn")
@@ -12,6 +13,10 @@ struct ContentView: View {
                         Homepagina()
                     case .Verbind:
                         Verbindpagina()
+                    case .VerbindMetID:
+                        VerbindMetIDPagina()
+                    case .VerbindMetQR:
+                        VerbindMetQRPagina()
                     case .Bericht:
                         EmptyView()
                     case .BerichtResultaat:
@@ -19,6 +24,7 @@ struct ContentView: View {
                     }
                 }
         }
+        .environment(\.apiClient, AppDependencies.apiClient)
         .padding()
     }
 }

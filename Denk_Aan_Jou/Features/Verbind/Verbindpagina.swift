@@ -4,6 +4,7 @@
 import SwiftUI
 
 struct Verbindpagina : View{
+    
     var body : some View{
         VStack(spacing: 20) {
                NavigationLink {

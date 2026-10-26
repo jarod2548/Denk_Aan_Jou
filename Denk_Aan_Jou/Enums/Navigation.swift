@@ -5,6 +5,8 @@ enum Navigation : Hashable
 {
     case Home
     case Verbind
+    case VerbindMetID
+    case VerbindMetQR
     case Bericht
     case BerichtResultaat
 }
