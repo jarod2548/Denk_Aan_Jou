@@ -53,4 +53,3 @@ fastlane/test_output
 
 # Ignore Xcode project workspaces and user data inside .xcodeproj bundles
 *.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace
