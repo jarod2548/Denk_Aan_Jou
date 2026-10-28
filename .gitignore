@@ -5,8 +5,7 @@
 .AppleDouble
 .LSOverride
 
-# Xcode
-# User settings and workspace data (should not be committed)
+# Xcode - user settings and workspace data (should not be committed)
 **/xcuserdata/
 **/*.xcuserdatad
 *.xcuserstate
@@ -20,7 +19,7 @@
 *.perspectivev3
 *.xccheckout
 
-# Build/Derived data
+# Build / Derived data
 build/
 DerivedData/
 *.o
@@ -54,4 +53,3 @@ fastlane/test_output
 
 # Ignore Xcode project workspaces and user data inside .xcodeproj bundles
 *.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace
