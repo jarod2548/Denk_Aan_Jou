@@ -5,6 +5,7 @@ import SwiftUI
 import SwiftData
 
 struct VerbindMetIDPagina : View{
+    
     @State private var lampID = ""
     @State private var lampNaam = ""
     @State private var foutmelding: String?

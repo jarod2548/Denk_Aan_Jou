@@ -1,12 +1,44 @@
-//
-//  LampColor.swift
-//  Denk_Aan_Jou
-enum LampColor : Hashable{
-    case Red
-    case Blue
-    case Green
+import Foundation
+import SwiftUI
+import UIKit
+
+struct LampColor: Codable {
+    var red: Double
+    var green: Double
+    var blue: Double
+
+    init(red: Double, green: Double, blue: Double) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+    }
+    
+    
 }
-//
-//  Created by Jarod Konijnenberg on 12/10/2026.
-//
+
+extension LampColor {
+    init?(color: Color) {
+        let uiColor = UIColor(color)
+
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        guard uiColor.getRed(
+            &red,
+            green: &green,
+            blue: &blue,
+            alpha: &alpha
+        ) else {
+            return nil
+        }
+
+        self.init(
+            red: Double(red),
+            green: Double(green),
+            blue: Double(blue)
+        )
+    }
+}
 
