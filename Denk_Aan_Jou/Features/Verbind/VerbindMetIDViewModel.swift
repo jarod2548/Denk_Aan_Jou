@@ -31,7 +31,7 @@ final class VerbindMetIDViewModel {
             in: .whitespacesAndNewlines
         )
 
-        guard !id.isEmpty, !lampName.isEmpty else {
+        guard !id.isEmpty else {
             errorMessage = "Vul zowel een lamp-ID als een naam in."
             return
         }
