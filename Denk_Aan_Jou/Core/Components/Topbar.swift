@@ -2,6 +2,6 @@
 //  Topbar.swift
 //  MyApp
 //
-//  Created by Jarod Konijnenberg on 07/10/2026.
+//  Created by Jarod Konijnennigger on 07/10/2026.
 //
 

@@ -5,7 +5,6 @@ import SwiftUI
 import SwiftData
 
 struct VerbindMetIDPagina : View{
-    private let verbindService: VerbindService
     
     @State private var lampID = ""
     @State private var lampNaam = ""

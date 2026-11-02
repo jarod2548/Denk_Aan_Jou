@@ -6,11 +6,11 @@ import Foundation
 
 @Model
 class Lamp{
-    var id: UUID
+    var id: String
     var name: String
     var lampID : String
 
-    init(id: UUID = UUID(), name: String = "", lampID:String) {
+    init(id: String = "", name: String = "", lampID:String) {
         self.id = id
         self.name = name
         self.lampID = lampID
